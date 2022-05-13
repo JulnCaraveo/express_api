@@ -17,12 +17,24 @@ app.get('/v1/explorers',(req, res)=>{
     //http code status: 200
     res.status(200).json(explorers)
 })
+//crear
 app.post('/v1/explorers',(req, res)=>{
     console.log('post explorers v1 api ${new Date()}')
     console.log(req.body)
     res.status(201).json({message:"creado exitosamente"})
 })
-
+//actualizar
+app.put('/v1/explorers/:id',(req, res)=>{
+    console.log('put explorers v1 api ${new Date()}')
+    console.log(req.body)
+    console.log(req.params.id)
+    res.status(201).json({message:"actualizado exitosamente"})
+})
+//eliminar
+app.delete('/v1/explorers/:id',(req, res)=>{
+    console.log('delete explorers v1 api ${new Date()}')
+    res.status(200).json({message:"se elimino exitosamente"})
+})
 
 // Con esto inicializamos esta app
 app.listen(port, () => {
