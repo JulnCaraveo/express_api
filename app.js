@@ -17,6 +17,12 @@ app.get('/v1/explorers',(req, res)=>{
     //http code status: 200
     res.status(200).json(explorers)
 })
+app.post('/v1/explorers',(req, res)=>{
+    console.log('post explorers v1 api ${new Date()}')
+    console.log(req.body)
+    res.status(201).json({message:"creado exitosamente"})
+})
+
 
 // Con esto inicializamos esta app
 app.listen(port, () => {
